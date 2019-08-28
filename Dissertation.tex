@@ -1,0 +1,133 @@
+\documentclass{ualrdissertation}
+
+% Document Options:
+%
+% Note if you want to save paper when printing drafts,
+% replace the above line by
+%
+%   \documentclass[draft]{iitthesis}
+%
+% See Help file for more about options.
+\usepackage{graphicx}  % Written by David Carlisle and Sebastian Rahtz
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+\newtheorem{assertion}{Assertion}
+\newtheorem{observation}{Observation}
+
+\usepackage{float}
+
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{blindtext}
+
+\usepackage{pifont}
+
+\usepackage{adjustbox}
+\usepackage{array}
+
+% Packages are explained in the Help document.
+%\raggedbottom
+%this is intent to kill the widows and orphans...
+%A new paragraph begun at the bottom of a page must have at least two
+%full lines of type before a page break occurs. If too little room remains
+%at the bottom of the page to accommodate two lines, the entire
+%paragraph must begin on the following page. The preceding page may
+%be shorter to allow for this adjustment.
+%A paragraph ended at the top of a page must have at least two full
+%lines of type. The preceding page may be shorter to allow for this
+%adjustment.
+\widowpenalty=10000
+\clubpenalty=10000
+
+\begin{document}
+
+\bstctlcite{UALR-DISSERTATION:BSTcontrol}
+
+%%% Declarations for Title Page %%%
+\title{The VDEN: AN AFFORDABLE IPT DESIGNED FOR CONFERENCES}
+\nsptitle{The VDEN: AN AFFORDABLE IPT DESIGNED FOR CONFERENCES}
+\ctitle{The VDEN: AN AFFORDABLE IPT DESIGNED FOR CONFERENCES}
+
+\author{Alexander Jaeger}
+\degree{Master of Science}
+\program{Information Science}
+\dept{Information Science}
+\college{Donaghey College of Engineering and Information Technology}
+\date{December 2019}
+\uyear{2019}
+\ms{}
+\bs{B.S., University of Arkansas at Little Rock, 2016}
+
+\adviser{Carolina Cruz-Neira}
+\adviserpos{\prof{Computer Science}}
+
+\readerone{Dirk Reiners}
+\readeronepos{\prof{Information Science}}
+
+\readertwo{Jan Springer}
+\readertwopos{\prof{Computer Science}}
+
+\coordinator{Jhon R. Talburt}
+\coordinatorpos{\prof{Information Science}}
+
+\dean{Lawrence Whitman}
+\deanpos{Dean}
+
+\copyrightnoticetrue      % crate copyright page or not
+%\coadvisortrue           % add co-advisor. activate it by removing % symbol to add co-advisor
+
+\maketitle                % create title and copyright pages
+
+\signaturepage
+
+%\fairusepage
+%\prelimpages         % Settings of preliminary pages are done with \prelimpages command
+
+%%% Abstract %%%
+\input{Abstract.tex}
+
+
+%%%  Acknowledgement %%%
+\input{Acknowledgement.tex}
+
+% Table of Contents
+\tableofcontents
+\clearpage
+
+% List of Tables
+\listoftables
+\clearpage
+
+%List of Figures
+\listoffigures
+\clearpage
+
+
+% \clearpage
+
+\textpages     % Settings of text-pages are done with \textpages command
+
+\input{Introduction.tex}
+
+\input{Requirements.tex}
+\input{PreviousLowCostCAVEsChapter.tex}
+\input{PreviousCAVELibsChapter.tex}
+\input{HardwareChapter.tex}
+\input{SoftwareChapter.tex}
+\input{Discussion.tex}
+\input{Conclusion.tex}
+
+\bibliographystyle{ualr-dissertation-IEEEtran}
+\bibliography{references} 
+
+
+\end{document}  % end of document
