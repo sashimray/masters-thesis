@@ -1,4 +1,4 @@
-\Chapter{Standard CAVE Configurations}\label{chapter:standardCAVEChapter}
+\Chapter{Generalized Design of a CAVE System}\label{chapter:standardCAVEChapter}
 
 %\Section[The MiniCAVE: A Voice Controlled IPT Environment]{
 %	\textit{The MiniCAVE: A Voice Controlled IPT Environment} 
@@ -6,16 +6,64 @@
 %}
 
 \filbreak
-\Section[Monitors vs Projectors]{Monitors vs Projectors}
+\Section[Display Technology]{Display Technology} \\
 
 \filbreak
-\Section[Tiling Displays]{Tiling Displays}
+\noindent\textbf{Monitors}\\
 
 \filbreak
-\Section[Projection: Front or Rear]{Projection: Front or Rear}
+\noindent\textbf{Projectors}\\
+
+\filbreak
+\Section[Computing]{Computing}
+
+A CAVE system requires rendering one image per eye on the screen. Robert Belleman et Al specifies a variety of computing configurations to support a CAVE \cite{belleman}.
+
+\filbreak
+\noindent\textbf{One Hosts with Two Graphics Adapters}\\
+\textcolor{red}{!!! - Warning! Not sure about this}
+\begin{center}
+	\textcolor{blue}{Image of One Host with Two Graphics Adapters}
+\end{center}
+
+With one set of CPUs controlling a handful of graphics systems, we can support multi-display rendering. In the 20th century, SGI machines were modeled with this architecture and the  21st century saw consumer PCs becoming equipped to handle multiple graphics cards. 
+
+The overarching problem is that consumer PCs typically support at most 2 graphics cards. CAVEs require at minimum of 4 displays, thus two cards that can handle two displays each would be suitable. Robert Belleman et Al notes that in 2001 these PCs could not be built due to the limitations in the number of AGP slots \cite{belleman}.
+
+\filbreak
+\noindent\textbf{Two Hosts with Two Graphics Adapters}\\
+\begin{center}
+	\textcolor{blue}{Image of Two Hosts with Two Graphics Adapters}
+\end{center}
+
+By splitting the responsibility of rendering across two computers, the rendering can be done in parallel achieving better performance. 
+
+However special precaution needs to be in place due to possible synchronization issues. These two computers are connected over a network and in theory they just have to render the scene for the given MVP matrix. However in practice, one of these computers is used to compute both eye matrices and will introduce a load imbalance. By running the matrix calculation on a third computer, we can solve the synchronization issues however the overall network traffic is doubled because we need to send both eye MVP matrices over the wire \cite{belleman}.
+
+\filbreak
+\noindent\textbf{One Host with Multi-headed Graphics Adapters}\\
+\begin{center}
+	\textcolor{blue}{Image of One Hosts with Multi-headed Graphics Adapters}
+\end{center}
+
+In 2001, there some support for multiple displays using a single graphics card and little support for hardware accelerated OpenGL \cite{belleman}.  By 2017, the latest Nvidia cards can support 4 displays in sync with accelerated OpenGL. This performance improvement provides consumer PCs the power to run games and simulations on multiple displays.
+
+
+\filbreak
+\Section[Projection]{Projection}
+\begin{center}
+	\textcolor{blue}{Image of Rear Projection vs Front Projection}
+\end{center}
+
 
 \filbreak
 \Section[Stereoscopy]{Stereoscopy}
+
+\filbreak
+\noindent\textbf{Passive Stereo}\\
+
+\filbreak
+\noindent\textbf{Active Stereo}\\
 
 \filbreak
 \Section[Tracking Techniques]{Tracking Techniques}
