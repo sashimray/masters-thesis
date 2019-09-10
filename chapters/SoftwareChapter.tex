@@ -63,25 +63,6 @@ Display Cameras will output the final image for the projectors. With one camera 
 \noindent\textbf{Head Tracking} \\
 A core feature of Virtual Reality is the generation of perspective correct imagery. This is done by understanding the head position and how the eyes view the scene. In order to track the head, the user dons a trackable baseball cap the tracking system syncs its position with the collection of eye cameras.
 
-\filbreak
-\Section[Calibration]{Calibration}\label{sec:calibrationSection} \\
-
-There are several sources of error when using the vden that have to be corrected. This section outlines the most common ones that we have found.
-
-\filbreak
-\noindent\textbf{Projector Misalignment and Overfill} \\
-Projector Misalignment and Overfill occurs during setup when the images between two projectors does not exactly align or the image is larger than the screen. 
-
-If the projector structure could lock in the position of the screens, then we could make guarantees about alignment and overfill. This can be seen in High-End CAVEs that implement multiple displays per wall via tiling. However, locking the screen to the frame would increase the setup time and we cannot guarantee perfect results without substantial infrastructure. The vDen is designed to be modular, since we can use software to correct, we should require overfill and calibrate for the error. This strategy at least minimizes physical setup time and guarantees the screen will be filled.
-
-In order to accommodate this source of error, the user needs to calibrate each screen's shape to fill the screen. A grid of movable dots is rendered, allowing a more precise positioning. In the background, is a fine checkerboard, this lets the user align two screens together and verify uniformity by physically measuring the size of each square across the screens.
-
-\filbreak
-\noindent\textbf{Perspective Distortion} \\
-Perspective Distortion occurs when the projector is off axis from the screen causing warping.
-
-This is solved by a technique called Homography which states there is an affine transformation between two planes. Simply put, there is a system of equations to transform each point in one coordinate system A to another B by distorting A to match B. In this case, we have a real mesh R and we want to become a uniform grid G. We can apply homography onto R to get G and thus the screen's coordinate system because ideal for rendering. This technique only needs to happen on startup and requires the calibration data.
-
 \Section[Dashboard]{Dashboard}\label{sec:dashboardSection} \\
 
 \clearpage

@@ -1,0 +1,64 @@
+\Chapter{Sources of Error and Distortion}\label{chapter:softwareChapter}
+
+\Section[Introduction]{Introduction}\label{sec:swIntroductionSection}\\
+
+Providing just a hardware solution is unacceptable for adoption, a software package that is easy to use and extensible is a necessary feature. Long are the days of the average VR graphics programmer using OpenGL to create simple prototypes. Game engines dominate the interactive media industry and VR SDKs were quick to target them.
+
+\Section[Software]{Software}\label{sec:Software}\\
+
+\filbreak
+\noindent\textbf{Projection Overfill} \\
+
+\filbreak
+\noindent\textbf{Perspective Distortion} \\
+Perspective Distortion occurs when the projector is off axis from the screen causing warping.
+
+This is solved by a technique called Homography which states there is an affine transformation between two planes. Simply put, there is a system of equations to transform each point in one coordinate system A to another B by distorting A to match B. In this case, we have a real mesh R and we want to become a uniform grid G. We can apply homography onto R to get G and thus the screen's coordinate system because ideal for rendering. This technique only needs to happen on startup and requires the calibration data.
+
+
+\filbreak
+\noindent\textbf{Uniform Image Stretching} \\
+
+\filbreak
+\noindent\textbf{Corner Image Alignment} \\
+
+\filbreak
+\noindent\textbf{Image Screen Fill} \\
+
+\filbreak
+\noindent\textbf{Color Correction} \\
+
+
+
+
+\Section[Hardware]{Hardware }\label{sec:Hardware}\\
+
+\filbreak
+\noindent\textbf{Warping} \\
+
+\filbreak
+\noindent\textbf{Screen Movement} \\
+
+\filbreak
+\noindent\textbf{Corner Gap} \\
+
+
+
+
+
+
+
+
+
+\Section[Tracking]{Tracking }\label{sec:Tracking}\\
+
+\filbreak
+\noindent\textbf{Physical Alignment} \\
+
+
+\filbreak
+\noindent\textbf{Coverage} \\
+
+
+
+\clearpage
