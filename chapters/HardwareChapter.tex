@@ -9,6 +9,26 @@ A typical CAVE installation has four major sources of hardware: projectors, scre
 %\ref{ref1}.
 
 \Section{Projectors}\label{sec:hwProjectorsSection}\\
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: What was the process of choosing this projector and what properties did we like?}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Monitor vs Projector \\
+			DLP VS LED \\  
+			1 Projector Per Wall \\ 
+			Monitor vs Projector \\ 
+			How Did We Choose  \\ 
+			Use of a Different Projector for Floor  \\ 
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
 
 The display of computer generated content is dominated by projectors and monitors. Projectors use a lamp and lens to project light onto a surface. Monitors utilize a two dimensional array of light cells to present an image to the user.
 
@@ -42,21 +62,86 @@ Reading the history of affordable IPTs, multiple projectors per wall is a comon 
 
 \filbreak
 \noindent\textbf{Screen Material} \\
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: What was the process of choosing this screen and what properties did we like?}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Fabric vs Panel \\  
+			White vs Projector \\
+			Folding the Screen \\
+			How we found our screen \\
+			Wrapping screen around frame edge \\
+			Attaching screen to the frame \\ 
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
+
 
 \filbreak
 \noindent\textbf{Frame} \\
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: How did we choose this frame to hold the screens and what factors became important (e.g. accordion, intuitive, velcro)}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Why Independent Frames \\  
+			Corner Shape and Rigidy (Wire for corners) \\
+			Conference Pop Up Frames \\
+			How we  modified the frame \\ 
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
 
 \Section{Structure}\label{sec:hwScreensSection}\\
+\begin{center}
+    \textcolor{OliveGreen}{
+        Purpose: Describe the thought behind the structure design and explain some key design (e.g. transportability, motorized, and material)
+    }
+
+    \begin{table}[H]
+        \centering
+        \renewcommand\arraystretch{0.5}
+        \begin{tabular}{|l|}
+            \hline 
+            Topics To Write About \\ 
+            \hline 
+            Rear Projected vs Front Projected Structures \\  
+            General description of our structure\\
+            Motorized  \\
+            Cable Management  \\
+            Packing  \\
+            \hline 
+        \end{tabular}
+    \end{table}
+\end{center}
 
 At a minimum, a traditional CAVE system requires a structure to hold the floor projector. High-End CAE systems that utilize multiple displays per wall will typically integrate them into the wall, increasing the complexity of the structure. Some rear projected CAVES will have the projectors on individual pedestals due to the throw distance required.
 
 Structures are also used to hold auxillary peripherals such as the tracking system and speakers.
 
+Since our CAVE is front-projected, all of the projectors are within the bounds of the system. We opted for a single beam design that goes across the screens to support the projectors and peripherals. 
+
+
 \begin{center}
 	\textcolor{blue}{Image of a frame with peripherals}
 \end{center}
 
-Since our CAVE is front-projected, all of the projectors are within the bounds of the system. We opted for a single beam design that goes across the screens to support the projectors and peripherals. 
+The structure is designed not only to support but also reduce the complexity of mounting the hardware during setup. 
+
+
 
 \filbreak
 \begin{table}[H]
@@ -78,6 +163,72 @@ Since our CAVE is front-projected, all of the projectors are within the bounds o
 	\caption{The required inputs into the system} \label{table:requiredInputs}
 \end{table}
 
-A difficulty in the structure design was cable management. \ref{table:requiredInputs} 
+A difficulty in the structure design was cable management. Table \ref{table:requiredInputs} showcases the required cables for the system. We alleviated this design by multiplexing the network and power cables, by mounting a box a power strip and network switch can be stored.
+
+
+
+\Section{Computer}\label{sec:hwComputerSection}\\
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: Explain why we needed the GTX 1080ti and what other parts were needed (e.g. secondary graphics card). Provide information on specifications of card}
+    
+    \begin{table}[H]
+        \centering
+        \renewcommand\arraystretch{0.5}
+        \begin{tabular}{|l|}
+            \hline 
+            Topics To Write About \\ 
+            \hline 
+            Explanation of Processing Required \\  
+            Discussion about Distributed Cluster vs Single PC \\
+            How did the 1080TI change our opinion  \\
+            Overall reasons for single pc \\
+            \hline 
+        \end{tabular}
+    \end{table}
+\end{center}
+
+CAVEs demand a large amount of computing resources in near real-time.  Ideally, each eye should be rendered at 60Hz minimum for each screen. If a screen has more than one display, then each of these will  of course need to be rendered at the same requirements. Originally, this lead to the use of high-end dedicated hardware (e.g. SGI machines) and once PCs were widely available, distributed clusters.
+
+Although dedicated hardware has fallen out of popularity, high end CAVE system require a cluster of computers in order to drive the displays.  Consumer graphics cards continue getting more powerful (largely in part due to the new applications in research and video games) with better general-purpose performance and the ability to support multiple displays. 
+
+The current generation of Nvidia Graphics Cards are capable of running 4 displays in sync. This ability is what allowed the development of the VDen with 1 projector per wall.
+
+This technique is what we researched when building the VDen. There was no room for a cluster, although it would provide greater performance there is an increase in setup and development difficulty. Not to mention that one PC with a single high-end graphics card is cheaper than multiple PCs with multiple lower-end cards.
+
+
+
+
+\Section{Tracking}\label{sec:hwTrackingSection}\\
+
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: Explain the reasoning behind the use of SteamVR lighthouse and how we integrated it into the VDen}
+    
+    \begin{table}[H]
+        \centering
+        \renewcommand\arraystretch{0.5}
+        \begin{tabular}{|l|}
+            \hline 
+            Topics To Write About \\ 
+            \hline 
+            Explanation of Leading Tracking Technologies (Optitrack and Lighthouse) \\  
+            Why is the lighthouse system popular \\
+            Why did we choose the lighthouse  \\
+            \hline 
+        \end{tabular}
+    \end{table}
+\end{center}
+
+A tracking system is central to any VR application. It is a core concept to  render a perspective correct image and providing interaction into the virtual world. 
+
+IR Camera tracking techniques are the most popular at this time. In general, these systems work by emitting light and either watching the reflections or having sensors on the tracked object to directly record the light. 
+
+For scientific tracking, systems were designed to produce the highest quality without regards to cost. By using an array of cameras, any angle can be accurately tracked. However, in recent years the computer gaming industry has dominated the market and their desire is for an affordable experience.
+
+In 2016, Valve released the SteamVR lighthouse system which uses an IR emitter and cameras physically located on the tracked object. Although, the size of the tracked area was small, it offered easy setup and a tracking quality that was good enough for the market at a reasonable prices.
+
+This lighthouse system is very popular for consumer VR experiences. They recently released a smaller tracked object that can be placed on things as well as the ability to build your own object. Now researchers can build their own hardware for VR peripherals.
+
+We utilize the light house tracking system because with only two boxes; it can easily coverthe VDen at an affordable price. For head tracking, we attached a small tracker to a hat that the user can wear, making it easy for a user to use the system.
+
 
 \clearpage
