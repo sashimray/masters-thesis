@@ -5,6 +5,27 @@
 Providing just a hardware solution is unacceptable for adoption, a software package that is easy to use and extensible is a necessary feature. Long are the days of the average VR graphics programmer using OpenGL to create simple prototypes. Game engines dominate the interactive media industry and VR SDKs were quick to target them.
 
 \noindent\textbf{The Choice of the Unity3D Game Engine}
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: Explain why we chose the Unity Game Engine}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Usage of Game Engines \\
+			2nd wave VR in game engines  \\
+			Unity vs Unreal \\  
+			easy development in programming \\ 
+			explain the role of display cameras \\ 
+			goal for programming the vden  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
+
 
 \begin{figure}[H]
 	\centering
@@ -25,6 +46,27 @@ It is of my personal desire to make CAVE development as simple and accessible as
 
 \filbreak
 \Section[Unity SDK]{Unity SDK}\label{sec:unitySDKSection} \\
+\begin{center}
+	\textcolor{OliveGreen}{Purpose: Explain the design of the SDK}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			structure of vive sdk \\
+			describe how easy the vive is  \\
+			emulate the structure of vive \\  
+			explain the role of eye cameras \\ 
+			explain the role of display cameras \\ 
+			how did we implement head tracking  \\
+			SDK configuration  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
 
 The simple act of downloading an SDK and dragging the necessary components into your scene sounds so fundamental, however it was not until WYSIWYG game engines became popular for this to happen. The architecture of the vDen SDK revolves around this concept.
 
@@ -33,6 +75,24 @@ To guide development, we defined three goals for our system: rendering immediate
 The core rendering system govern the functionality of the eye and display cameras.
 
 \noindent\textbf{Eye Cameras} \\
+\begin{center}
+	\textcolor{OliveGreen}{
+		Purpose: Explain the how the eye cameras work
+	}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Purpose \\
+			Frustum Calculation \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
 
 \begin{figure}[H]
 	\centering
@@ -57,12 +117,98 @@ The calcuation of a new frustum is easy. We need to determine the
 
 \filbreak
 \noindent\textbf{Display Cameras} \\
+\begin{center}
+	\textcolor{OliveGreen} {
+		Purpose: Explain the display cameras
+	}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Purpose \\
+			Merging images together \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
+
 Display Cameras will output the final image for the projectors. With one camera per projector, the vDen has four total. The camera is associated with a pair of eye cameras and is responsible for merging their output together, left-right or top-bottom, for sterescopy, then rendering on the calibration mesh.
+
 
 \filbreak
 \noindent\textbf{Head Tracking} \\
+\begin{center}
+	\textcolor{OliveGreen} {
+		Purpose: Explain the head tracking system
+	}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Purpose \\
+			Utilizing the SteamVR trackable object \\
+			Sync virtual and physical positions \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
+
 A core feature of Virtual Reality is the generation of perspective correct imagery. This is done by understanding the head position and how the eyes view the scene. In order to track the head, the user dons a trackable baseball cap the tracking system syncs its position with the collection of eye cameras.
 
+
+\filbreak
+\Section[Calibrator]{Calibrator}\label{sec:CalibratorSection} \\
+\begin{center}
+	\textcolor{OliveGreen}{
+		Purpose: Explain the design of the Calibrator
+	}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Dragging each corner to fill the surface \\
+			Checking corner image alignment \\
+			Checking uniform scaling \\
+			User Interaction \\
+			Per Project JSON File\\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
+
 \Section[Dashboard]{Dashboard}\label{sec:dashboardSection} \\
+\begin{center}
+	\textcolor{OliveGreen}{
+		Purpose: Explain the design of the dashboard
+	}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand\arraystretch{0.5}
+		\begin{tabular}{|l|}
+			\hline 
+			Topics To Write About \\ 
+			\hline 
+			Purpose \\
+			Development \\
+			Project Management \\
+			Config Management \\
+			Projector Control \\
+			\hline 
+		\end{tabular}
+	\end{table}
+\end{center}
 
 \clearpage
